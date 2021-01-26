@@ -1,0 +1,17 @@
+.openBox 
+    #asideBtn 
+        p.asideBtnText Open
+aside#mySidenav.aside
+    ul.list-group.list-group-flush
+        div.card-header: h5 Мій аккаунт 
+        li.list-group-item: a.dropdown-item(href="/me") Налаштування
+        li.list-group-item: a.dropdown-item(href="/my-tours") Мої тури
+        li.list-group-item: a.dropdown-item(href="/my-reviews") Мої відгуки
+    if (user.role === 'admin')
+        div.card-header: h5 Управління
+        ul.list-group.list-group-flush
+            li.list-group-item: a.dropdown-item(href="/all-tours") Тури
+            li.list-group-item: a.dropdown-item(href="/all-users") Користувачі
+            li.list-group-item: a.dropdown-item(href="/all-reviews") Відгуки
+            li.list-group-item: a.dropdown-item(href="/all-bookings") Бронь
+    div.card-header#closebtn: h5 Закрити

@@ -1,0 +1,32 @@
+extends base
+block content
+  main.main
+    include _asideUserMenu
+    div.insideData.user-info
+      h2.heading-secondary.ma-bt-md Налаштування облікового запису
+      form.form.form-user-data
+        div.form-group
+          img.form_user-photo(src=`/img/users/${user.photo}`, alt='Ваше фото')
+          input#photo.form_upload(type='file' accept='image/*' name='photo')
+        div.form-group
+          label(for="email") Почтова скринька
+          input#email.form-control(type="email" value=`${user.email}` aria-describedby="emailHelp" placeholder='your@email.com' required)
+        div.form-group
+          label(for="name") Ім'я Користувача
+          input#name.form-control(type="text" value=`${user.name}` placeholder="Ваше Ім*я" required)
+          button.btn.btn-primary Зберегти
+      hr.my-4
+      h2.heading-secondary.ma-bt-md Змінити пароль
+      form.form-user-password
+        div.form-group
+            label(for="password-current") Поточний пароль
+            input#password-current.form-control(type="password" placeholder='* * * * * * * *' required minlength='8')
+        div.form-group
+            label(for="password") Пароль
+            input#password.form-control(type="password" placeholder='* * * * * * * *' required minlength='8')
+        div.form-group
+            label(for="password-confirm") Пароль
+            input#password-confirm.form-control(type="password" placeholder='* * * * * * * *' required minlength='8')
+            button.btn.btn-primary.btn-save-password Зберегти пароль
+      button#delMe.btn.btn-danger Видалити мене
+        

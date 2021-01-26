@@ -1,0 +1,15 @@
+extends base
+
+block content
+  main.main
+    include _asideUserMenu
+    div.section-write-review
+        h2.heading-secondary Розкажіть про ваші враження:
+        form#form-review
+            div.form-group
+              label(for="number") Оцінка:
+              input#stars.form-control(type="number" min="1" value=`${review.rating}` max="5" placeholder='5' required)
+
+            div.form-group
+                textarea#reviewText.form-control(rows="3" placeholder='Залишіть ваш відгук' required)= review.review
+                p: button.btn.btn-primary#update-review(data-id=`${review.id}`) Відправити

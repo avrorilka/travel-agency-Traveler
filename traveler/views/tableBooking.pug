@@ -1,0 +1,21 @@
+extends base
+
+block content
+  main.main 
+    include _asideUserMenu
+    div.container-fluid: div.row
+        h2.tableHeader Всі Бронювання
+        table.manage
+            tr
+                th id
+                th Назва туру
+                th Користувач
+                th Дії
+            each book in bookings
+                tr
+                    td= book.id
+                    td= book.tour.name
+                    td= book.user.name
+                    td
+                        button.del(data-type=`bookings` data-id=`${book.id}`) Х
+                    

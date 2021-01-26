@@ -1,0 +1,32 @@
+
+extends base
+
+block content
+  main.main: div.container-fluid: div.row
+    each tour in tours
+      
+      div.col-md-4: div.card
+        img.card-img-top(src=`/img/tours/${tour.imageCover}`, alt=`${tour.name}`)
+        div.card-block
+          .card_main
+            h4.card-title: span= tour.name
+            p.card-text= tour.summary
+
+            .card_data: svg.card_icon: use(xlink:href='/img/icons.svg#icon-map-pin')
+              span= tour.startLocation.description
+            .card_data: svg.card_icon: use(xlink:href='/img/icons.svg#icon-flag')
+              if (tour.locations.length == 1)
+                span= `${tour.locations.length} точка`
+              else 
+                span= `${tour.locations.length} точки`
+            .card_data: svg.card_icon: use(xlink:href='/img/icons.svg#icon-user')
+              span= `${tour.maxGroupSize} людей`
+          .card_footer
+            .groupData
+              p: span.card_footer-value= `$ ${tour.price}`
+                span.card_footer-text  за людину
+              p.card_ratings: span.card__footer-value= tour.ratingsAverage
+                span.card_footer-text= ` рейтинг (${tour.ratingsQuantity})`
+            a.btn.btn-primary.moreAboutTour(href=`/tour/${tour.slug}`) Детальніше
+
+      

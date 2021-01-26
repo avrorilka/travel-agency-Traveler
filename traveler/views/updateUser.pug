@@ -1,0 +1,20 @@
+extends base
+block content
+  main.main
+    include _asideUserMenu
+    div.insideData.user-info
+      h2.heading-secondary.ma-bt-md Налаштування облікового запису
+      form.form.form-user-data-update(data-id=`${user.id}`)
+        div.form-group
+          img.form_user-photo(src=`/img/users/${user.photo}`, alt='Ваше фото')
+        div.form-group
+            label(for="role") Роль
+            input#role.form-control(type="text" value=`${user.role}` required)
+        div.form-group
+          label(for="email") Почтова скринька
+          input#email.form-control(type="email" value=`${user.email}` aria-describedby="emailHelp" placeholder='your@email.com' required)
+        div.form-group
+          label(for="name") Ім'я Користувача
+          input#name.form-control(type="text" value=`${user.name}` placeholder="Ваше Ім*я" required)
+          button.btn.btn-primary#updateUser Зберегти
+        

@@ -1,0 +1,87 @@
+extends base
+include _reviewCard
+
+block append head
+  script(src='https://api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js')
+  link(href='https://api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet')
+
+block content
+  main.main: .tour-full
+    section.section-header
+      .header-cover
+        .header-overlay
+        img.header-cover(src=`/img/tours/${tour.imageCover}`, alt=`${tour.name}`)
+      .heading-box
+      h1.heading-tour
+        span= `${tour.name}`
+
+    div.section-description.col-md-4
+      .quick-info-aside
+        h2.heading-secondary Короткі факти:
+        .card_data: svg.card_icon: use(xlink:href='/img/icons.svg#icon-clock')
+          span= `${tour.duration} дн`
+        .card_data: svg.card_icon: use(xlink:href='/img/icons.svg#icon-user')
+          span= `${tour.maxGroupSize} людей`
+        .card_data: svg.card_icon: use(xlink:href='/img/icons.svg#icon-trending-up')
+          span= `Рівень: ${tour.difficulty}`
+        .card_data: svg.card_icon: use(xlink:href='/img/icons.svg#icon-star')
+          span= `Рейтинг: ${tour.ratingsAverage} / 5`
+        .card_data: svg.card_icon: use(xlink:href='/img/icons.svg#icon-star')
+          span= `Ціна: ${tour.price} $`
+      
+      .quick-info-aside.guides
+          h2.heading-secondary Tуристичні гіди:
+          each guide in tour.guides
+            .overview-box__detail
+              img.overview-box_img(src=`/img/users/${guide.photo}`, alt=`${guide.name}`)
+              - if (guide.role === 'lead-guide')
+                span.overview-box_label Головний гід: 
+              - if (guide.role === 'guide')
+                span.overview-box_label Гід: 
+              span.overview-box_text= guide.name
+    
+    div.section-description.mainText.col-md-8
+      .description-box
+      h2.heading-secondary.ma-bt-lg= `Опис ${tour.name} туру`
+      - const parapraphs = tour.description.split('\n');
+      each p in parapraphs
+        p.description_text= p
+    
+    div.section-pictures
+      each img, i in tour.images
+        .picture-box.col-4
+          img.picture-box_img(src=`/img/tours/${img}`, alt=`${tour.name} ${i + 1}`, class=`picture-box_img-${i + 1}`)
+    
+    div.section-map
+      #map(data-locations=`${JSON.stringify(tour.locations)}`)
+
+    div.section-reviews
+      .reviews
+        each review in tour.reviews
+          if(review.user)
+            +reviewCard(review)
+    
+    div.section-write-review
+      h2.heading-secondary Розкажіть про ваші враження:
+      form#form-review
+        div.form-group
+          label(for="number") Оцінка:
+            input#stars.form-control(type="number" min="1" value="5" max="5" placeholder='5' required)
+
+        div.form-group
+          textarea#reviewText.form-control(rows="3" placeholder='Залишіть ваш відгук' required)
+          if user
+            p: button.btn.btn-primary#send-review(data-tour-id=`${tour.id}`) Відправити
+          else
+            p: a.btn.btn-primary.logInToBook(href='/login') Увійти
+
+    div.section-booking
+      .booking-img
+        img.book_logo(src='/img/logo-round.png', alt='Natours logo')
+      .booking-content
+        h2.heading-secondary Відправляйтесь у мандри з нами
+        p.booking-text Замовляєте тур сьогодні та завтра вирушайте на відпочинок!
+        if user
+          p: button.btn.btn-primary#book-tour(data-tour-id=`${tour.id}` data-tour-price=`${tour.price}`) Замовити зараз!
+        else
+          p: a.btn.btn-primary.logInToBook(href='/login') Увійти для бронювання

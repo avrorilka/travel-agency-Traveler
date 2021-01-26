@@ -1,0 +1,24 @@
+extends base
+
+block content
+  main.main
+    include _asideUserMenu
+    div.container-fluid: div.row
+        h2.tableHeader Всі Користувачі
+        table.manage
+            tr
+                th id
+                th Ім*я
+                th Роль
+                th Почта
+                th Дії
+            each user in users
+                tr
+                    td= user.id
+                    td= user.name
+                    td= user.role
+                    td= user.email
+                    td
+                        a.change(data-type=`users` data-id=`${user.id}` href=`update-users/${user.id}`) Змінити
+                        button.del(data-type=`users` data-id=`${user.id}`) Х
+                    

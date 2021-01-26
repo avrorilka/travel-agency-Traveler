@@ -1,0 +1,22 @@
+header.header
+  nav.navbar.navbar-expand-lg.fixed-top.navbar-dark
+    a.navbar-brand(href='/')
+      img(src='/img/logo-white-full.png' alt='Traveler logo')
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    
+    .collapse.navbar-collapse(id='navbarSupportedContent')
+      ul.navbar-nav.mr-auto
+        li.nav-item: a.nav-link(href='/') Тури
+
+      ul.navbar-nav.float-right
+        if user
+          li.nav-item
+            a.nav-link(href='/me')
+              img.user-img(src=`/img/users/${user.photo}` alt=`Аватар ${user.name}`)
+              span= user.name.split(' ')[0]
+          li.nav-item: a.nav-link#logout Вихід
+        else
+          li.nav-item: a.nav-link.logout(href='/login') Вхід
+          li.nav-item: a.nav-link.logout(href='/signup') Приєднатися
+          

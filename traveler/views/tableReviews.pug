@@ -1,0 +1,26 @@
+extends base
+
+block content
+  main.main
+    include _asideUserMenu
+    div.container-fluid: div.row
+        h2.tableHeader Всі Відгуки
+        table.manage
+            tr
+                th id
+                th Назва туру
+                th Текст
+                th Оцінка
+                th Дії
+            each review in reviews
+                tr
+                    td= review.id
+                    each t in tours
+                        if(review.tour == t.id)
+                            td= t.name
+                    td= review.review
+                    td= review.rating
+                    td
+                        a.change(data-type=`reviews` data-id=`${review.id}` href=`update-reviews/${review.id}`) Змінити
+                        button.del(data-type=`reviews` data-id=`${review.id}`) Х
+                    

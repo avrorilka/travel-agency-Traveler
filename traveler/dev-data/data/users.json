@@ -1,0 +1,191 @@
+[
+  {
+    "_id": "600b48a4482541167806c713",
+    "name": "Маковська Ольга",
+    "email": "admin@traveler.com",
+    "role": "admin",
+    "active": true,
+    "photo": "admin.jpg",
+    "password": "adminadmin"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc057",
+    "name": "Стрілець Олександр",
+    "email": "alex@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-1.jpg",
+    "password": "password123"
+  },
+  {
+    "_id": "5c8a1dfa2f8fb814b56fa181",
+    "name": "Вашингтон Лау",
+    "email": "loulou@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-2.jpg",
+    "password": "123456789"
+  },
+  {
+    "_id": "5c8a1e1a2f8fb814b56fa182",
+    "name": "Гавриленко Софія",
+    "email": "sophie@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-3.jpg",
+    "password": "987654321"
+  },
+  {
+    "_id": "5c8a1ec62f8fb814b56fa183",
+    "name": "Яремчук Аліна",
+    "email": "аyla@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-4.jpg",
+    "password": "password1234"
+  },
+  {
+    "_id": "5c8a1f292f8fb814b56fa184",
+    "name": "Браун Лео",
+    "email": "leo@example.com",
+    "role": "guide",
+    "active": true,
+    "photo": "user-5.jpg",
+    "password": "1234password"
+  },
+  {
+    "_id": "5c8a1f4e2f8fb814b56fa185",
+    "name": "Захарова Євгенія",
+    "email": "jennifer@example.com",
+    "role": "guide",
+    "active": true,
+    "photo": "user-6.jpg",
+    "password": "pass12345word"
+  },
+  {
+    "_id": "5c8a201e2f8fb814b56fa186",
+    "name": "Городська Катерина",
+    "email": "kate@example.com",
+    "role": "guide",
+    "active": true,
+    "photo": "user-7.jpg",
+    "password": "word12345pass"
+  },
+  {
+    "_id": "5c8a20d32f8fb814b56fa187",
+    "name": "Константинівна Єлизавета",
+    "email": "lisa@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-8.jpg",
+    "password": "123456789"
+  },
+  {
+    "_id": "5c8a211f2f8fb814b56fa188",
+    "name": "Гамільтон Крістіан",
+    "email": "chris@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-9.jpg",
+    "password": "987654321"
+  },
+  {
+    "_id": "5c8a21d02f8fb814b56fa189",
+    "name": "Дудік Дмитро",
+    "email": "dima@example.com",
+    "role": "lead-guide",
+    "active": true,
+    "photo": "user-10.jpg",
+    "password": "password12345"
+  },
+  {
+    "_id": "5c8a21f22f8fb814b56fa18a",
+    "name": "Арзуманян Арам",
+    "email": "aarav@example.com",
+    "role": "lead-guide",
+    "active": true,
+    "photo": "user-11.jpg",
+    "password": "12345password"
+  },
+  {
+    "_id": "5c8a22c62f8fb814b56fa18b",
+    "name": "Буш Мія",
+    "email": "miyah@example.com",
+    "role": "lead-guide",
+    "active": true,
+    "photo": "user-12.jpg",
+    "password": "pass12345word"
+  },
+  {
+    "_id": "5c8a23412f8fb814b56fa18c",
+    "name": "Грін Бен",
+    "email": "ben@example.com",
+    "role": "guide",
+    "active": true,
+    "photo": "user-13.jpg",
+    "password": "word12345pass"
+  },
+  {
+    "_id": "5c8a23c82f8fb814b56fa18d",
+    "name": "Рибак Яна",
+    "email": "yana@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-14.jpg",
+    "password": "1p2a3s4s5w6o7r8d"
+  },
+  {
+    "_id": "5c8a23de2f8fb814b56fa18e",
+    "name": "Терещук Максим",
+    "email": "max@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-15.jpg",
+    "password": "123789456"
+  },
+  {
+    "_id": "5c8a24282f8fb814b56fa18f",
+    "name": "Байдон Ізабель",
+    "email": "isabel@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-16.jpg",
+    "password": "10987654321"
+  },
+  {
+    "_id": "5c8a24402f8fb814b56fa190",
+    "name": "Рибак Олександр",
+    "email": "alexFish@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-17.jpg",
+    "password": "2005302001"
+  },
+  {
+    "_id": "5c8a245f2f8fb814b56fa191",
+    "name": "Алейніков Сергій",
+    "email": "ser@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-18.jpg",
+    "password": "password123"
+  },
+  {
+    "_id": "5c8a24822f8fb814b56fa192",
+    "name": "Прилипко Василь",
+    "email": "vasya@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-19.jpg",
+    "password": "pass123word"
+  },
+  {
+    "_id": "5c8a24a02f8fb814b56fa193",
+    "name": "Зозуля Ірина",
+    "email": "ira@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-20.jpg",
+    "password": "32145password"
+  }
+]

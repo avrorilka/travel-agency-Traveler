@@ -1,0 +1,21 @@
+
+extends base
+block content
+  main.main: div.logInForm
+    h3 РЕЄСТРАЦІЯ
+    form#form-signup
+      
+        div.form-group
+            label(for="email") Почтова скринька
+            input#email.form-control(type="email" aria-describedby="emailHelp" placeholder='your@email.com' required)
+        div.form-group
+            label(for="name") Ім'я Користувача
+            input#name.form-control(type="text" placeholder="Ваше Ім*я" required)
+      
+        div.form-group
+            label(for="password") Пароль
+            input#password.form-control(type="password" placeholder='* * * * * * * *' required minlength='8')
+        div.form-group
+            label(for="password-confirm") Підтвердження пароля
+            input#password-confirm.form-control(type="password" placeholder='* * * * * * * *' required minlength='8')
+            button.btn.btn-primary Приєднатися

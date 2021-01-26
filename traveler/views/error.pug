@@ -1,0 +1,10 @@
+extends base
+block content
+  main.main
+
+    div.jumbotron#error: div.picError
+      h1.display-4 Щось пішло не так!
+      p.lead= msg
+      hr.my-4
+      p Під час роботи виникла якась помилка! Спробуйте повернутися на головну сторінку!
+      a.btn.btn-primary.btn-lg(href="/" role="button") На головну

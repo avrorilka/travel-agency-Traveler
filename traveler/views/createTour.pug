@@ -1,0 +1,43 @@
+extends base
+block content
+  main.main
+    include _asideUserMenu
+    .tour-form
+        h3 Новий тур
+        form.create-tour
+            div.form-group
+                label(for="name") Назва:
+                input#name.form-control(type="text" required)
+            div.form-group.small
+                label(for="duration") Тривалість:
+                input#duration.form-control(type="number" min="1" required)
+            div.form-group.small
+                label(for="maxGroupSize") Максимальний розмір групи:
+                input#maxGroupSize.form-control(type="number" min="1" required)
+            div.form-group.small
+                label(for="price") Ціна:
+                input#price.form-control(type="number" placeholder='$' min="1" required)
+            div.form-group.small
+                label(for="difficulty") Складність:
+                select#difficulty.form-control
+                    option(value="легкий") легкий
+                    option(value="середній") середній
+                    option(value="важкий") важкий
+            div.form-group
+                label(for="summary") Короткий опис:
+                input#summary.form-control(required)
+            div.form-group
+                label(for="description") Повний опис:
+                textarea#description.form-control(rows="3" required)
+            div.form-group.small
+                label(for="coord") Координати точки:
+                input#latitude.form-control(type="text" placeholder="2.17403" required)
+                input#longitude.form-control(type="text" placeholder="41.40338" required)
+            div.form-group
+                label(for="imageCover") Гід:
+                input#guide.form-control(type="text" placeholder="5c8a1dfa2f8fb814b56fa181")
+            button.btn.btn-primary Відправити
+                
+            
+                    
+
